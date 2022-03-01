@@ -6,9 +6,13 @@ Geometry creator with an attractor point
 
 ## Inputs
 domain1 : lower boundary for distance between a face and the attractor.
+
 domain2 : upper boundary for distance between a face and the attractor.
+
 divide : number of division for the cube
+
 length : Length of a side of the cube.
+
 u,v : define coordination of the attractor.
 
 ## Plug in
