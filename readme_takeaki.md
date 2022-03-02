@@ -1,19 +1,20 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/mcneel/compute.rhino3d.appserver/main?label=version&style=flat-square)
 ![node-current (scoped)](https://img.shields.io/badge/dynamic/json?label=node&query=engines.node&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmcneel%2Fcompute.rhino3d.appserver%2Fmain%2Fpackage.json&style=flat-square&color=dark-green)
 
-# Spiky_box.gh
-Geometry creator with an attractor point
+# Description
+iphone case creator with the selection of 3d pattern
 
 ## Inputs
-domain1 : lower boundary for distance between a face and the attractor.
+picker : user can choose a pattern from 3d geometries.
 
-domain2 : upper boundary for distance between a face and the attractor.
+3d dimension : some parameters for 3d patterns.
 
-divide : number of division for the cube
+color : user can choose a color for the case.
 
-length : Length of a side of the cube.
+point : define coordination of the point for text.
 
-u,v : define coordination of the attractor.
+## Outputs
+3dm file : to be 3d printed...?
 
 ## Plug in
-Nothing
+None
