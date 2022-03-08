@@ -5,7 +5,7 @@
 iphone case creator with 3d pattern
 
 ## Inputs
-picker : user can choose a pattern from 3d geometries.
+picker : user can choose a pattern from 3d geometries representing Wagara pattern.
 
 3d dimension : some parameters for 3d patterns.
 
