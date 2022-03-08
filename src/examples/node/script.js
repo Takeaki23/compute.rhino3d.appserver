@@ -15,6 +15,7 @@ const definition = "Node.gh";
 const dimension_slider = document.getElementById("dimension");
 dimension_slider.addEventListener("mouseup", onSliderChange, false);
 dimension_slider.addEventListener("touchend", onSliderChange, false);
+
 const height_slider = document.getElementById("height");
 height_slider.addEventListener("mouseup", onSliderChange, false);
 height_slider.addEventListener("touchend", onSliderChange, false);
