@@ -100,7 +100,17 @@ function init() {
     // handle changes in the window size
     window.addEventListener( 'resize', onWindowResize, false )
 
-    
+    // load the model
+    const loader = new Rhino3dmLoader()
+    loader.setLibraryPath( 'https://cdn.jsdelivr.net/npm/rhino3dm@0.13.0/' )
+
+    loader.load( model, function ( object ) {
+
+        // uncomment to hide spinner when model loads
+        // document.getElementById('loader').remove()
+        scene.add( object )
+
+    } )
 
     animate()
 }
@@ -188,17 +198,20 @@ function collectResults(responseJson) {
             }
         })
         
+        // // color mesh
+        // object.traverse((child) => {
+        //   if (child.isMesh) {
+        //     //console.log(child.userData.attributes.geometry.userStrings[0][1])
+        //     const threeColor = new THREE.Color("rgb(255, 0, 0)");
+        //     const mat = new THREE.BasicMaterial({ color: threeColor });
+        //     child.material = mat;
+        //   }
+        // });
+
+
+
         // add object graph from rhino model to three.js scene
         scene.add( object )
-
-        // load rhino model
-        loader.load( model, function ( object ) {
-
-        // uncomment to hide spinner when model loads
-        // document.getElementById('loader').remove()
-        scene.add( object )
-
-    } )
 
         // hide spinner and enable download button
         showSpinner(false)
@@ -208,6 +221,9 @@ function collectResults(responseJson) {
         zoomCameraToSelection(camera, controls, scene.children)
     })
 }
+
+
+
 
 /**
  * Attempt to decode data tree item to rhino geometry
