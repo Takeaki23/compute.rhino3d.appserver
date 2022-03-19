@@ -60,7 +60,7 @@ function getInputs() {
 
 // more globals
 let scene, camera, renderer, controls
-const model = '3d_iphone_final.3dm'
+// const model = '3d_iphone_final.3dm'
 
 
 /**
@@ -100,17 +100,17 @@ function init() {
     // handle changes in the window size
     window.addEventListener( 'resize', onWindowResize, false )
 
-    // load the model
-    const loader = new Rhino3dmLoader()
-    loader.setLibraryPath( 'https://cdn.jsdelivr.net/npm/rhino3dm@0.13.0/' )
+    // // load the model
+    // const loader = new Rhino3dmLoader()
+    // loader.setLibraryPath( 'https://cdn.jsdelivr.net/npm/rhino3dm@0.13.0/' )
 
-    loader.load( model, function ( object ) {
+    // loader.load( model, function ( object ) {
 
-        // uncomment to hide spinner when model loads
-        // document.getElementById('loader').remove()
-        scene.add( object )
+    //     // uncomment to hide spinner when model loads
+    //     // document.getElementById('loader').remove()
+    //     scene.add( object )
 
-    } )
+    // } )
 
     animate()
 }
@@ -198,15 +198,15 @@ function collectResults(responseJson) {
             }
         })
         
-        // color mesh
-        object.traverse((child) => {
-          if (child.isMesh) {
-            //console.log(child.userData.attributes.geometry.userStrings[0][1])
-            const threeColor = new THREE.Color("rgb(255, 0, 0)");
-            const mat = new THREE.BasicMaterial({ color: threeColor });
-            child.material = mat;
-          }
-        });
+        // // color mesh
+        // object.traverse((child) => {
+        //   if (child.isMesh) {
+        //     //console.log(child.userData.attributes.geometry.userStrings[0][1])
+        //     const threeColor = new THREE.Color("rgb(255, 0, 0)");
+        //     const mat = new THREE.BasicMaterial({ color: threeColor });
+        //     child.material = mat;
+        //   }
+        // });
 
 
 
