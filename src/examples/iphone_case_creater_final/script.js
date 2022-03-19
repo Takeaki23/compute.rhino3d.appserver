@@ -198,15 +198,15 @@ function collectResults(responseJson) {
             }
         })
         
-        // // color mesh
-        // object.traverse((child) => {
-        //   if (child.isMesh) {
-        //     //console.log(child.userData.attributes.geometry.userStrings[0][1])
-        //     const threeColor = new THREE.Color("rgb(255, 0, 0)");
-        //     const mat = new THREE.BasicMaterial({ color: threeColor });
-        //     child.material = mat;
-        //   }
-        // });
+        // color mesh
+        object.traverse((child) => {
+          if (child.isMesh) {
+            //console.log(child.userData.attributes.geometry.userStrings[0][1])
+            const threeColor = new THREE.Color("rgb(255, 0, 0)");
+            const mat = new THREE.BasicMaterial({ color: threeColor });
+            child.material = mat;
+          }
+        });
 
 
 
