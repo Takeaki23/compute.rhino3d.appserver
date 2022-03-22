@@ -71,12 +71,12 @@ function init() {
 
     // create a scene and a camera
     scene = new THREE.Scene()
-    scene.background = new THREE.Color(1, 1, 1)
+    scene.background = new THREE.Color(255, 255, 255)
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000)
     camera.position.set(1, -1, 1) // like perspective view
 
     // very light grey for background, like rhino
-    scene.background = new THREE.Color('whitesmoke')
+    scene.background = new THREE.Color('black')
 
     // create the renderer and add it to the html
     renderer = new THREE.WebGLRenderer({ antialias: true })
@@ -87,13 +87,19 @@ function init() {
     // add some controls to orbit the camera
     controls = new OrbitControls(camera, renderer.domElement)
 
-    // add a directional light
-    const directionalLight = new THREE.DirectionalLight( 0xffffff )
-    directionalLight.intensity = 2
-    scene.add( directionalLight )
 
-    const ambientLight = new THREE.AmbientLight()
-    scene.add( ambientLight )
+    // 点光源を作成
+        // new THREE.PointLight(色, 光の強さ, 距離, 光の減衰率)
+        const light = new THREE.PointLight(0xffffff, 5, 500, 1.0);
+        light.position.set(230,0,20);
+        scene.add(light);
+
+        // 照明を可視化するヘルパー
+        const sphereSize = 50;
+        const pointLightHelper = new THREE.PointLightHelper( light, sphereSize );
+        scene.add( pointLightHelper );
+
+        
 
     // handle changes in the window size
     window.addEventListener( 'resize', onWindowResize, false )
